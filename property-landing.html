@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeHome - Properti Premium Indonesia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            background: #ff6b6b;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 5%;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 1rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .search-box input, .search-box select {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.95rem;
+        }
+
+        .search-box input:focus, .search-box select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+
+        .search-box button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #ff5252;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 5%;
+            background: #f8f9fa;
+        }
+
+        .features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Properties Section */
+        .properties {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .properties-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .property-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+        }
+
+        .property-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .property-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff6b6b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .property-info {
+            padding: 1.5rem;
+        }
+
+        .property-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-location {
+            color: #666;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .property-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .spec {
+            text-align: center;
+        }
+
+        .spec-number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .spec-label {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .property-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .view-button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .view-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .filter-btn:hover {
+            border-color: #667eea;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 5%;
+            background: #f8f9fa;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .about-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #666;
+        }
+
+        .about-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .search-box {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: slideInUp 0.3s ease-out;
+        }
+
+        .close {
+            color: #999;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .modal input, .modal textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .modal button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">🏠 LuxeHome</div>
+            <ul class="nav-links">
+                <li><a onclick="scrollToSection('properties')">Properti</a></li>
+                <li><a onclick="scrollToSection('features')">Keunggulan</a></li>
+                <li><a onclick="scrollToSection('about')">Tentang</a></li>
+                <li><a onclick="openContactModal()" class="cta-button">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content fade-in">
+            <h1>Temukan Rumah Impian Anda</h1>
+            <p>Koleksi properti premium dengan lokasi strategis di seluruh Indonesia</p>
+            <div class="search-box">
+                <input type="text" id="searchLocation" placeholder="Cari lokasi...">
+                <select id="propertyType">
+                    <option value="">Tipe Properti</option>
+                    <option value="rumah">Rumah</option>
+                    <option value="apartemen">Apartemen</option>
+                    <option value="ruko">Ruko</option>
+                </select>
+                <input type="number" id="priceRange" placeholder="Harga Maksimal (Juta)">
+                <button onclick="searchProperties()">Cari</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-container">
+            <h2 class="section-title">Mengapa Memilih LuxeHome?</h2>
+            <p class="section-subtitle">Kami menawarkan layanan terbaik untuk kebutuhan properti Anda</p>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Properti Pilihan</h3>
+                    <p>Semua properti telah tersertifikasi dan telah melalui verifikasi lengkap</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💰</div>
+                    <h3>Harga Kompetitif</h3>
+                    <p>Dapatkan harga terbaik dengan berbagai pilihan cicilan yang fleksibel</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Tim Profesional</h3>
+                    <p>Konsultan berpengalaman siap membantu Anda 24/7</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📍</div>
+                    <h3>Lokasi Strategis</h3>
+                    <p>Properti berlokasi di pusat kota dengan akses transportasi mudah</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📋</div>
+                    <h3>Proses Mudah</h3>
+                    <p>Proses pembelian yang transparan dan dokumentasi lengkap</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Keamanan Terjamin</h3>
+                    <p>Transaksi aman dengan jaminan hukum dan asuransi properti</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section class="properties" id="properties">
+        <div class="properties-container">
+            <h2 class="section-title">Properti Terbaru</h2>
+            <p class="section-subtitle">Pilihan properti premium dengan lokasi terbaik</p>
+            
+            <div class="filter-section">
+                <button class="filter-btn active" onclick="filterProperties('semua')">Semua</button>
+                <button class="filter-btn" onclick="filterProperties('rumah')">Rumah</button>
+                <button class="filter-btn" onclick="filterProperties('apartemen')">Apartemen</button>
+                <button class="filter-btn" onclick="filterProperties('ruko')">Ruko</button>
+            </div>
+
+            <div class="property-grid" id="propertyGrid">
+                <!-- Properties akan di-load oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">🏢</div>
+            <div class="about-text">
+                <h2>Tentang LuxeHome</h2>
+                <p>LuxeHome adalah platform terpercaya dalam menjual dan membeli properti di Indonesia sejak 2018. Kami berkomitmen untuk memberikan layanan terbaik kepada pelanggan kami.</p>
+                <p>Dengan pengalaman lebih dari 5 tahun di industri properti, kami telah membantu ribuan pelanggan menemukan properti impian mereka.</p>
+                
+                <ul class="about-list">
+                    <li>Lebih dari 5000+ properti tersedia</li>
+                    <li>Tim profesional berpengalaman</li>
+                    <li>Garansi kepuasan pelanggan</li>
+                    <li>Proses transaksi yang aman dan transparan</li>
+                    <li>Dukungan pelanggan 24/7</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Siap Menemukan Properti Impian Anda?</h2>
+        <p>Hubungi tim kami hari ini dan dapatkan konsultasi gratis</p>
+        <button class="cta-button" onclick="openContactModal()">Hubungi Kami Sekarang</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>LuxeHome</h3>
+                <p>Platform properti terpercaya di Indonesia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigasi</h3>
+                <ul>
+                    <li><a href="#properties">Properti</a></li>
+                    <li><a href="#features">Keunggulan</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a onclick="openContactModal()">Hubungi</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <ul>
+                    <li><a href="tel:+6281234567890">+62 812-3456-7890</a></li>
+                    <li><a href="mailto:info@luxehome.id">info@luxehome.id</a></li>
+                    <li><a href="#">Jl. Merdeka No. 123, Jakarta</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Media Sosial</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LuxeHome. Semua hak dilindungi. | Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2 style="margin-bottom: 1.5rem;">Hubungi Kami</h2>
+            <form onsubmit="submitContact(event)">
+                <input type="text" placeholder="Nama Lengkap" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="No. Telepon" required>
+                <input type="text" placeholder="Subjek" required>
+                <textarea rows="4" placeholder="Pesan Anda" required></textarea>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sample Data Properti
+        const properties = [
+            {
+                id: 1,
+                name: "Rumah Modern Minimalis",
+                location: "Jakarta Selatan",
+                price: 750,
+                type: "rumah",
+                image: "🏠",
+                beds: 3,
+                baths: 2,
+                area: 150,
+                description: "Rumah modern dengan desain minimalis, lokasi strategis dekat pusat kota"
+            },
+            {
+                id: 2,
+                name: "Apartemen Luxury 2BR",
+                location: "Bandung",
+                price: 450,
+                type: "apartemen",
+                image: "🏢",
+                beds: 2,
+                baths: 1,
+                area: 85,
+                description: "Apartemen mewah dengan fasilitas lengkap di pusat kota Bandung"
+            },
+            {
+                id: 3,
+                name: "Ruko Komersial",
+                location: "Surabaya",
+                price: 550,
+                type: "ruko",
+                image: "🏪",
+                beds: 2,
+                baths: 2,
+                area: 200,
+                description: "Ruko komersial cocok untuk bisnis, lokasi ramai di jantung kota"
+            },
+            {
+                id: 4,
+                name: "Villa Mewah dengan Pool",
+                location: "Yogyakarta",
+                price: 1200,
+                type: "rumah",
+                image: "🏡",
+                beds: 4,
+                baths: 3,
+                area: 300,
+                description: "Villa mewah dengan kolam renang pribadi dan taman luas"
+            },
+            {
+                id: 5,
+                name: "Apartemen Cozy Studio",
+                location: "Jakarta Pusat",
+                price: 280,
+                type: "apartemen",
+                image: "🏢",
+                beds: 1,
+                baths: 1,
+                area: 45,
+                description: "Studio apartment modern cocok untuk investasi atau hunian sementara"
+            },
+            {
+                id: 6,
+                name: "Rumah Cluster Keluarga",
+                location: "Medan",
+                price: 650,
+                type: "rumah",
+                image: "🏘️",
+                beds: 3,
+                baths: 2,
+                area: 140,
+                description: "Rumah cluster dengan fasilitas komunitas yang lengkap dan aman"
+            }
+        ];
+
+        let currentFilter = 'semua';
+
+        // Load Properties on Page Load
+        function loadProperties() {
+            const grid = document.getElementById('propertyGrid');
+            grid.innerHTML = '';
+            
+            const filtered = currentFilter === 'semua' 
+                ? properties 
+                : properties.filter(p => p.type === currentFilter);
+            
+            filtered.forEach((prop, index) => {
+                const card = document.createElement('div');
+                card.className = 'property-card fade-in';
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.innerHTML = `
+                    <div class="property-image">
+                        <span style="font-size: 5rem;">${prop.image}</span>
+                        <span class="property-badge">TERBARU</span>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">Rp ${prop.price} Juta</div>
+                        <div class="property-location">📍 ${prop.location}</div>
+                        <div class="property-specs">
+                            <div class="spec">
+                                <div class="spec-number">${prop.beds}</div>
+                                <div class="spec-label">Kamar Tidur</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-number">${prop.baths}</div>
+                                <div class="spec-label">Kamar Mandi</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-number">${prop.area}</div>
+                                <div class="spec-label">m²</div>
+                            </div>
+                        </div>
+                        <p class="property-description">${prop.description}</p>
+                        <button class="view-button" onclick="openContactModal('${prop.name}')">Lihat Detail</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter Properties
+        function filterProperties(type) {
+            currentFilter = type;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            loadProperties();
+        }
+
+        // Search Properties
+        function searchProperties() {
+            const location = document.getElementById('searchLocation').value;
+            const type = document.getElementById('propertyType').value;
+            const price = document.getElementById('priceRange').value;
+            
+            let filtered = properties;
+            
+            if (location) {
+                filtered = filtered.filter(p => 
+                    p.location.toLowerCase().includes(location.toLowerCase())
+                );
+            }
+            
+            if (type) {
+                filtered = filtered.filter(p => p.type === type);
+            }
+            
+            if (price) {
+                filtered = filtered.filter(p => p.price <= parseInt(price));
+            }
+            
+            displaySearchResults(filtered);
+        }
+
+        function displaySearchResults(results) {
+            const grid = document.getElementById('propertyGrid');
+            grid.innerHTML = '';
+            
+            if (results.length === 0) {
+                grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 2rem; color: #999;">Tidak ada properti yang sesuai dengan pencarian Anda</p>';
+                return;
+            }
+            
+            results.forEach((prop, index) => {
+                const card = document.createElement('div');
+                card.className = 'property-card fade-in';
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.innerHTML = `
+                    <div class="property-image">
+                        <span style="font-size: 5rem;">${prop.image}</span>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">Rp ${prop.price} Juta</div>
+                        <div class="property-location">📍 ${prop.location}</div>
+                        <div class="property-specs">
+                            <div class="spec">
+                                <div class="spec-number">${prop.beds}</div>
+                                <div class="spec-label">Kamar Tidur</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-number">${prop.baths}</div>
+                                <div class="spec-label">Kamar Mandi</div>
+                            </div>
+                            <div class="spec">
+                                <div class="spec-number">${prop.area}</div>
+                                <div class="spec-label">m²</div>
+                            </div>
+                        </div>
+                        <p class="property-description">${prop.description}</p>
+                        <button class="view-button" onclick="openContactModal('${prop.name}')">Lihat Detail</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Modal Functions
+        function openContactModal(propertyName = '') {
+            const modal = document.getElementById('contactModal');
+            modal.style.display = 'block';
+            if (propertyName) {
+                const form = modal.querySelector('input[placeholder="Subjek"]');
+                form.value = `Tertarik dengan: ${propertyName}`;
+            }
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        function submitContact(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah dikirim. Tim kami akan menghubungi Anda segera.');
+            closeContactModal();
+            e.target.reset();
+        }
+
+        // Scroll to Section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Load properties on page load
+        window.addEventListener('load', loadProperties);
+    </script>
+</body>
+</html>
